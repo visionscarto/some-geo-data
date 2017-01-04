@@ -57,6 +57,7 @@
         ' "Congo, Dem Rep":"COD";' +
         ' "Congo (Dem. Rep.)":"COD";' +
         ' "Democratic Republic of the Congo":"COD";' +
+        ' "DR Congo":"COD";' +
         ' "DRC":"COD";' +
         ' "RDC":"COD";' +
         ' "Dem. Rep. Congo":"COD";' +
@@ -135,6 +136,7 @@
         ' "Korea (Rep.)":"KOR";' +
         ' "Korea, Rep.":"KOR";' +
         ' "Korea, Republic of":"KOR";' +
+        ' "Republic of Korea":"KOR";' +
         ' "South Korea":"KOR";' +
         ' "Korea":"KOR";' +
         ' "Kosovo":"KOS";' +
@@ -464,6 +466,7 @@
         ' "SZ":"SWZ";' +
         ' "TC":"TCA";' +
         ' "Turks and Caicos Islands":"TCA";' +
+        ' "Turks and Caicos Is.":"TCA";' +
         ' "TD":"TCD";' +
         ' "TG":"TGO";' +
         ' "TH":"THA";' +
@@ -527,6 +530,13 @@
         ' "SJ":"SJM";' +
         ' "TF":"ATF";' +
         ' "TK":"TKL";' +
+        ' "/^Aland/":"ALA";' + // attention a ne pas taper New Ze*aland*
+        ' "/Fae?roe/":"FRO";' +
+        ' "/Feroe/":"FRO";' +
+        ' "/Jersey/":"JEY";' +
+        ' "/Guerne?sey/":"GGY";' +
+        ' "Netherlands Antilles":"ANT";' +
+        ' "Antilles néerlandaises":"ANT";' +
         ' "/BritishVirginIs/":"VGB";' +
         ' "/Cayman/":"CYM";' +
         ' "/Antigua/":"ATG";' +
@@ -535,6 +545,8 @@
         ' "/N(orth)?Mariana/":"MNP";' +
         ' "/SintMaarten/":"SXM";' +
         ' "/Saint-?Martin/":"SXM";' +
+        ' "/St-?Martin/":"SXM";' +
+        ' "Isle of Man":"IMN";' +
         ' "XK":"KOS";' +
         ' "China-hk":"HKG";' +
         ' "China-tw":"TWN";' +
