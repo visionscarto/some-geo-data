@@ -3,7 +3,8 @@
 (function () {
     visionscarto = {};
     visionscarto.init_country_names = function () {
-        var a = '{"Afghanistan":"AFG";' +
+        var a = '{' +
+        ' "Afghanistan":"AFG";' +
         ' "Angola":"AGO";' +
         ' "Albania":"ALB";' +
         ' "Andorra":"AND";' +
@@ -209,7 +210,7 @@
         ' "S Sudan":"SSD";' +
         ' "Senegal":"SEN";' +
         ' "Singapore":"SGP";' +
-        ' "/SolomonI/":"SLB";' +
+        ' "/S[ao]lomonI/":"SLB";' +
         ' "Sierra Leone":"SLE";' +
         ' "El Salvador":"SLV";' +
         ' "San Marino":"SMR";' +
@@ -559,6 +560,137 @@
         visionscarto.country_names = JSON.parse(a);
         visionscarto.iso = {};
         visionscarto.country_regexp = {};
+        
+        visionscarto.french = {
+"Chine": "China",
+"États-Unis": "United States",
+"Russie": "Russia",
+"Royaume-Uni": "UK",
+"Allemagne": "Germany",
+"Andorre": "Andorra",
+"Australie": "Australia",
+"Autriche": "Austria",
+"Belgique": "Belgium",
+"Chypre": "Cyprus",
+"Danemark": "Denmark",
+"Espagne": "Spain",
+"Estonie": "Estonia",
+"Finlande": "Finland",
+"Grèce": "Greece",
+"Irlande": "Ireland",
+"Islande": "Iceland",
+"Israél": "Israel",
+"Italie": "Italy",
+"Japon": "Japan",
+"Malte": "Malta",
+"Norvège": "Norway",
+"Nouvelle-Zélande": "New Zealand",
+"Pays-Bas": "Netherlands",
+"Corée du Sud": "Korea",
+"Saint-Marin": "San Marino",
+"Slovénie": "Slovenia",
+"Suède": "Sweden",
+"Suisse": "Switzerland",
+"Arabie saoudite": "Saudi Arabia",
+"Bruneï": "Brunei",
+"Émirats arabes unis": "United Arab Emirates",
+"Koweït": "Kuwait",
+"Singapour": "Singapore",
+"Républiqur tchèque": "Czech Republic",
+"Slovaquie": "Slovakia",
+"Barbade": "Barbados",
+"Lettonie": "Latvia",
+"Trinité-et-Tobago": "Trinidad and Tobago",
+"Chili": "Chile",
+"Croatie": "Croatia",
+"Hongrie": "Hungary",
+"Libye": "Libya",
+"Lituanie": "Lithuania",
+"Pologne": "Poland",
+"Saint-Kitt-et-Niéves": "KNA",
+"Argentine": "Argentina",
+"Bulgarie": "Bulgaria",
+"Roumanie": "Romania",
+"Brésil": "Brazil",
+"Turquie": "Turkey",
+"Afrique du Sud": "South Africa",
+"Albanie": "Albania",
+"Algérie": "Algeria",
+"Arménie": "Armenia",
+"Azerbaïdjan": "Azerbaijan",
+"Biélorussie": "Belarus",
+"Bolivie": "Bolivia",
+"Bosnie-Herzégovine": "Bosnia and Herzegovina",
+"Cap Vert": "Cabo Verde",
+"Cameroun": "Cameroon",
+"Colombie": "Colombia",
+"Dominique": "Dominica",
+"Égypte": "Egypt",
+"Équateur": "Ecuador",
+"Macédoine": "Macedonia",
+"Fidji": "Fiji",
+"Géorgie": "Georgia",
+"Grenade": "Grenada",
+"Îles Marschall": "Marshall Is.",
+"Inde": "India",
+"Indonésie": "Indonesia",
+"Irak": "Iraq",
+"Jamaïque": "Jamaica",
+"Jordanie": "Jordan",
+"Kirghizistan": "Kyrgyzstan",
+"Liban": "Lebanon",
+"Malaisie": "Malaysia",
+"Maroc": "Morocco",
+"Maurice": "Mauritius",
+"Mexique": "Mexico",
+"Micronésie": "Micronesia",
+"Mongolie": "Mongolia",
+"Monténégro": "Montenegro",
+"Namibie": "Namibia",
+"Nigéria": "Nigeria",
+"Ouzbékistan": "Uzbekistan",
+"Palaos": "Palau",
+"Papouasie": "Papua New Guinea",
+"Pérou": "Peru",
+"Philippine": "Philippines",
+"Syrie": "Syria",
+"Moldavie": "Moldova",
+"République Dominicaine": "Dominican Republic",
+"Corée du Nord": "North Korea",
+"Saint-Vincent-et-Grenadines": "Saint Vincent and the Grenadines",
+"Serbie": "Serbia",
+"Tadjikistan": "Tajikistan",
+"Thaïlande": "Thailand",
+"Tunisie": "South Africa",
+"Turkménistan": "Turkmenistan",
+"Bénin": "Benin",
+"Bhoutan": "Bhutan",
+"Cambodge": "Cambodia",
+"Comores": "Comoros",
+"Érythrée": "Eritrea",
+"Éthiopie": "Ethiopia",
+"Gambie": "Gambia",
+"Guinée": "Guinea",
+"Guinée-Bissau": "Guinea-Bissau",
+"Guinée équatoriale": "Equatorial Guinea",
+"Haïti": "Haiti",
+"Îles Salomon": "Salomon Is.",
+"Libéria": "Liberia",
+"Mauritanie": "Mauritania",
+"Népal": "Nepal",
+"Ouganda": "Uganda",
+"République centrafricaine": "Central African Republic",
+"République démocratique du Congo": "Democratic Republic of the Congo",
+"Tanzanie": "Tanzania",
+"Sénégal": "Senegal",
+"Somalie": "Somalia",
+"Soudan": "Sudan",
+"Soudan du Sud": "South Sudan",
+"Tchad": "Chad",
+"Yémen": "Yemen",
+"Zambie": "Zambia",
+        }
+        
         for (i in visionscarto.country_names) {
             if (i[0] === '/') {
                 var j = i.replace(/\//g, '');
@@ -578,6 +710,7 @@
         if (!('country_names' in visionscarto)) {
             visionscarto.init_country_names();
         }
+        str = str.replace(/ /g, ' ').trim();
         var str2 = str.toLowerCase().replace(/["' ,.-]/g, '');
         var iso = false;
         if (str2 in visionscarto.iso) {
@@ -594,6 +727,9 @@
         if (iso) {
             return iso.toUpperCase();
         } else {
+            if (str in visionscarto.french && str != visionscarto.french[str]) {
+                return visionscarto.country_name_to_iso3(visionscarto.french[str]);
+            }
             console.log("iso not found", str);
         }
     }
