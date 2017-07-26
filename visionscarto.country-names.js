@@ -1,5 +1,6 @@
 // convert to ISO_3166-1_alpha 3
 // https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
+// [SEE ALSO](https://github.com/vincentarelbundock/countrycode)
 (function () {
     visionscarto = {};
     visionscarto.init_country_names = function () {
