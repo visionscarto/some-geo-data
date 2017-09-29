@@ -197,6 +197,7 @@
         ' "North Korea":"PRK";' +
         ' "Dem. Rep. Korea":"PRK";' +
         ' "/^Korea.*People/":"PRK";' +
+        ' "/People.*Korea/":"PRK";' +
         '  "Portugal":"PRT";' +
         ' "Paraguay":"PRY";' +
         ' "/Palestin.*/":"PSE";' +
@@ -555,6 +556,7 @@
         ' "Czech":"CZE";' +
         ' "Korea, South":"KOR";' +
         ' "the Netherlands":"NLD";' +
+        ' "/UnitedKingdom/":"GBR";' +
         ' "USSR":"RUS";' +
         ' "Czechoslovakia":"CZE"}';
         a = a.toLowerCase().replace(/;/g,',');
