@@ -743,7 +743,7 @@
       if (str in visionscarto.french && str != visionscarto.french[str]) {
         return visionscarto.country_name_to_iso3(visionscarto.french[str]);
       }
-      console.log("iso not found", str);
+      console.log("iso not found:", JSON.stringify(str));
     }
   };
 
