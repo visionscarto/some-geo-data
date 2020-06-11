@@ -63,12 +63,15 @@
       ' "DR Congo":"COD";' +
       ' "DRC":"COD";' +
       ' "RDC":"COD";' +
+      ' "/Kinshasa/":"COD";' +
       ' "Dem. Rep. Congo":"COD";' +
       ' "Rép. Dém. Congo":"COD";' +
       ' "Congo (Rep.)":"COG";' +
       ' "Republic of the Congo":"COG";' +
       ' "Congo, Rep":"COG";' +
       ' "Congo":"COG";' +
+      ' "/Brazza/":"COG";' +
+      ' "Democratic Republic of the Congo":"COD";' +
       ' "Colombia":"COL";' +
       ' "Comoros":"COM";' +
       ' "Cabo Verde":"CPV";' +
