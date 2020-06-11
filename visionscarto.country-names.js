@@ -82,6 +82,7 @@
       ' "Cyprus":"CYP";' +
       ' "Czech Republic":"CZE";' +
       ' "Czech Rep.":"CZE";' +
+      ' "Czechia":"CZE";' +
       ' "Barbados":"DBS";' +
       ' "/Germany/":"DEU";' +
       ' "Djibouti":"DJI";' +
